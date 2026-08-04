@@ -115,8 +115,8 @@ Xem code mẫu (DeepEval/RAGAS/TruLens) chi tiết trong `README.md` gốc mục
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
 | Phạm Nguyễn Hùng Nguyên (hungnguyen-1601) | 2A202601279 | **Role 1 — Team Leader & Architect:** điều phối nhóm, review & merge PR, duyệt config chunking/RRF/threshold, tổng hợp README & kiến trúc, xác nhận 35/35 test passed | ✅ Hoàn thành |
-| An (Anbt0106) | | **Role 2 — Data & Retrieval Specialist:** Task 1 (thu thập văn bản chính sách), Task 4 (chunking + indexing ChromaDB), Task 7 (RRF reranking), Task 9 (retrieval pipeline, fallback threshold 0.48), tích hợp generation vào app.py | ✅ Hoàn thành |
-| Cảnh (zangzang1303) | | **Role 3 — Frontend & Chatbot Dev:** Task 2 (crawl tin tức), Task 5 (semantic search + HyDE), Task 8 (PageIndex vectorless fallback), Task 10 (generation có citation), giao diện Streamlit chatbot | ✅ Hoàn thành |
+| Bùi Thọ An (Anbt0106) |2A202601883| **Role 2 — Data & Retrieval Specialist:** Task 1 (thu thập văn bản chính sách), Task 4 (chunking + indexing ChromaDB), Task 7 (RRF reranking), Task 9 (retrieval pipeline, fallback threshold 0.48), tích hợp generation vào app.py | ✅ Hoàn thành |
+| Lê Tuấn Cảnh | 2A202601127| **Role 3 — Frontend & Chatbot Dev:** Task 2 (crawl tin tức), Task 5 (semantic search + HyDE), Task 8 (PageIndex vectorless fallback), Task 10 (generation có citation), giao diện Streamlit chatbot | ✅ Hoàn thành |
 | (ngovan15121977-bit) | | **Role 4 — Evaluation & QA Engineer:** Task 3 (convert Markdown), Task 6 (lexical search BM25/TF-IDF), golden_dataset.json 15 Q&A, eval_pipeline.py, báo cáo A/B results.md, chạy pytest | ✅ Hoàn thành |
 
 ---
