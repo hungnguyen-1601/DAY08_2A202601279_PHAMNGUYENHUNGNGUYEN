@@ -4,6 +4,7 @@ requests>=2.31.0
 numpy>=1.24.0
 
 # Task 2 - Crawling
+litellm>=1.93.1,<1.94.2
 crawl4ai>=0.3.0
 
 # Task 3 - Document conversion
@@ -27,11 +28,6 @@ openai>=1.30.0
 
 # Group project - UI
 streamlit>=1.35.0
-
-# Group project - Evaluation
-ragas==0.1.21
-datasets>=2.14.0
-langchain-openai>=0.1.0
 
 # Testing (dung de cham diem bai ca nhan)
 pytest>=7.0.0
