@@ -108,49 +108,49 @@ def _embed_text(text: str, model: Any = None) -> list[float]:
 
 def semantic_search(query: str, top_k: int = 10) -> list[dict]:
     """
-    Tìm kiếm ngữ nghĩa sử dụng vector similarity.
-
-    Args:
-        query: Câu truy vấn
-        top_k: Số lượng kết quả tối đa
-
-    Returns:
-        List of {
-            'content': str,      # Nội dung chunk
-            'score': float,      # Cosine similarity score
-            'metadata': dict     # source, doc_type, chunk_index
-        }
-        Sorted by score descending.
+    Semantic search using HyDE and cosine similarity over the ChromaDB vector store.
     """
-    # TODO: Implement semantic search
-    #
-    # Bước 1: Embed query bằng cùng model ở Task 4
-    # Bước 2: Query vector store (cosine similarity)
-    # Bước 3: Return top_k results
-    #
-    # Ví dụ với ChromaDB:
-    # from .task4_chunking_indexing import get_collection, get_embedding_model
-    #
-    # model = get_embedding_model()
-    # query_vector = model.encode(query).tolist()
-    #
-    # collection = get_collection()
-    # results = collection.query(
-    #     query_embeddings=[query_vector],
-    #     n_results=top_k,
-    #     include=["documents", "metadatas", "distances"],
-    # )
-    #
-    # output = []
-    # for doc, meta, dist in zip(
-    #     results["documents"][0], results["metadatas"][0], results["distances"][0]
-    # ):
-    #     score = max(0.0, 1.0 - dist)  # cosine distance → similarity
-    #     output.append({"content": doc, "score": round(score, 4), "metadata": meta})
-    #
-    # output.sort(key=lambda x: x["score"], reverse=True)
-    # return output[:top_k]
-    raise NotImplementedError("Implement semantic_search")
+    query = (query or "").strip()
+    if not query:
+        return []
+
+    hypothetical_doc = _generate_hypothetical_doc(query)
+    try:
+        embedding_vector = _embed_text(hypothetical_doc)
+    except Exception:
+        return []
+    if not embedding_vector:
+        return []
+
+    try:
+        collection = _get_chroma_collection()
+        results = collection.query(
+            query_embeddings=[embedding_vector],
+            n_results=top_k,
+            include=["documents", "metadatas", "distances"],
+        )
+    except Exception:
+        return []
+
+    documents = results.get("documents", [[]])[0]
+    metadatas = results.get("metadatas", [[]])[0]
+    distances = results.get("distances", [[]])[0]
+
+    output = []
+    for content, metadata, distance in zip(documents, metadatas, distances):
+        score = 1.0 - float(distance)
+        if score < 0:
+            score = 0.0
+        output.append(
+            {
+                "content": content,
+                "score": round(score, 4),
+                "metadata": metadata or {},
+            }
+        )
+
+    output.sort(key=lambda x: x["score"], reverse=True)
+    return output[:top_k]
 
 
 if __name__ == "__main__":

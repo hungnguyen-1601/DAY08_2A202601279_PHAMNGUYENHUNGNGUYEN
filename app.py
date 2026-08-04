@@ -149,6 +149,3 @@ if query:
         "content": answer,
         "sources": sources,
     })
-
-
-#abc
