@@ -70,7 +70,42 @@ Xem code mẫu (DeepEval/RAGAS/TruLens) chi tiết trong `README.md` gốc mục
 ## Kiến Trúc Hệ Thống
 
 ```
-[Vẽ diagram kiến trúc ở đây]
+┌──────────────────────── DATA LAYER ────────────────────────┐
+│ Task 1: PDF/HTML chính sách (RMIT)  →  data/landing/legal/ │
+│ Task 2: Crawl 5 bài tin tức (JSON)  →  data/landing/news/  │
+│ Task 3: MarkItDown convert          →  data/standardized/  │
+│ Task 4: RecursiveCharacterTextSplitter (size=500, overlap= │
+│         50) + all-MiniLM-L6-v2 (384 dim) → ChromaDB (508   │
+│         chunks, cosine)                                    │
+└────────────────────────────┬───────────────────────────────┘
+                             │
+        User ──► Streamlit Chatbot (app.py)
+                             │
+                             ▼
+┌───────────────── RETRIEVAL (Task 9) ───────────────────────┐
+│  ├─ Semantic Search (Task 5, ChromaDB + HyDE) ──┐          │
+│  ├─ Lexical Search  (Task 6, BM25/TF-IDF) ──────┤          │
+│  │                                              ▼          │
+│  │                    Merge + Rerank RRF k=60 (Task 7)     │
+│  │                    (+ Jina cross-encoder nếu có key)    │
+│  └─ Nếu cosine top-1 < 0.48 → Fallback PageIndex           │
+│     Vectorless (Task 8)                                    │
+└────────────────────────────┬───────────────────────────────┘
+                             ▼
+┌───────────────── GENERATION (Task 10) ─────────────────────┐
+│ Reorder chunks (chống lost-in-the-middle) → format context │
+│ → OpenRouter LLM → câu trả lời kèm citation [Source, Year] │
+│ → không đủ evidence: "I cannot verify this information"    │
+└────────────────────────────┬───────────────────────────────┘
+                             ▼
+     UI: chat history (session_state) + expander nguồn tham khảo
+
+┌──────────────── EVALUATION (group_project) ────────────────┐
+│ golden_dataset.json (15 Q&A) → eval_pipeline.py            │
+│ Metrics: Hit@5, MRR, Context Recall, Citation Presence/    │
+│ Validity, Abstention Accuracy + A/B: Hybrid+RRF+fallback   │
+│ vs Dense-only → results.md + evaluation_results.json       │
+└────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -79,10 +114,10 @@ Xem code mẫu (DeepEval/RAGAS/TruLens) chi tiết trong `README.md` gốc mục
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Phạm Nguyễn Hùng Nguyên (hungnguyen-1601) | 2A202601279 | **Role 1 — Team Leader & Architect:** điều phối nhóm, review & merge PR, duyệt config chunking/RRF/threshold, tổng hợp README & kiến trúc, xác nhận 35/35 test passed | ✅ Hoàn thành |
+| An (Anbt0106) | | **Role 2 — Data & Retrieval Specialist:** Task 1 (thu thập văn bản chính sách), Task 4 (chunking + indexing ChromaDB), Task 7 (RRF reranking), Task 9 (retrieval pipeline, fallback threshold 0.48), tích hợp generation vào app.py | ✅ Hoàn thành |
+| Cảnh (zangzang1303) | | **Role 3 — Frontend & Chatbot Dev:** Task 2 (crawl tin tức), Task 5 (semantic search + HyDE), Task 8 (PageIndex vectorless fallback), Task 10 (generation có citation), giao diện Streamlit chatbot | ✅ Hoàn thành |
+| (ngovan15121977-bit) | | **Role 4 — Evaluation & QA Engineer:** Task 3 (convert Markdown), Task 6 (lexical search BM25/TF-IDF), golden_dataset.json 15 Q&A, eval_pipeline.py, báo cáo A/B results.md, chạy pytest | ✅ Hoàn thành |
 
 ---
 
@@ -97,9 +132,3 @@ streamlit run app.py
 # hoặc
 chainlit run app.py
 ```
-
----
-
-## Lưu ý
-
-Hãy giữ lại repo này nếu như bạn học track 3 giai đoạn 2, chúng ta sẽ phát triển tiếp dự án lên knowledge graph để khắc phục các câu hỏi hóc búa khi có các câu hỏi khó.

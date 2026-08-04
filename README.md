@@ -550,8 +550,30 @@ run_dashboard()
 ### Kiến Trúc Hệ Thống
 
 ```
-[Vẽ diagram kiến trúc ở đây]
+Data (Task 1-3: legal PDF/HTML + news JSON → Markdown chuẩn hoá)
+        │
+        ▼
+Task 4: Chunking (Recursive, size=500, overlap=50)
+        + Embedding all-MiniLM-L6-v2 (384 dim) → ChromaDB (cosine)
+        │
+User ──► Streamlit Chatbot (app.py)
+        │
+        ▼
+Task 9 Retrieval Pipeline:
+   ├─ Semantic Search (Task 5, ChromaDB + HyDE) ──┐
+   ├─ Lexical Search  (Task 6, BM25/TF-IDF) ──────┤→ RRF k=60 (Task 7)
+   └─ cosine top-1 < 0.48 → Fallback PageIndex Vectorless (Task 8)
+        │
+        ▼
+Task 10 Generation: reorder chống lost-in-the-middle → OpenRouter LLM
+        → trả lời kèm citation [Source, Year] / từ chối nếu thiếu evidence
+        │
+        ▼
+UI: chat history + expander nguồn  |  Evaluation: golden 15 Q&A,
+A/B Hybrid vs Dense-only → group_project/evaluation/results.md
 ```
+
+Chi tiết đầy đủ xem `group_project/README.md`.
 
 ---
 
@@ -559,10 +581,10 @@ run_dashboard()
 
 | Thành viên | MSSV | Nhiệm vụ | Trạng thái |
 |-----------|------|----------|------------|
-| | | | |
-| | | | |
-| | | | |
-| | | | |
+| Phạm Nguyễn Hùng Nguyên (hungnguyen-1601) | 2A202601279 | **Role 1 — Team Leader & Architect:** điều phối, review & merge PR, duyệt config, tổng hợp README & kiến trúc, xác nhận 35/35 test passed | ✅ Hoàn thành |
+| An (Anbt0106) | | **Role 2 — Data & Retrieval Specialist:** Task 1, Task 4, Task 7 (RRF), Task 9 (fallback 0.48), tích hợp app.py | ✅ Hoàn thành |
+| Cảnh (zangzang1303) | | **Role 3 — Frontend & Chatbot Dev:** Task 2, Task 5 (HyDE), Task 8 (PageIndex), Task 10, Streamlit UI | ✅ Hoàn thành |
+| (ngovan15121977-bit) | | **Role 4 — Evaluation & QA Engineer:** Task 3, Task 6, golden_dataset 15 Q&A, eval_pipeline.py, results.md | ✅ Hoàn thành |
 
 ---
 
