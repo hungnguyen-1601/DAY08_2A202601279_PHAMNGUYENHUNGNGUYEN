@@ -18,6 +18,11 @@ data/_tmp_pdf/
 pageindex_doc_ids.json
 pageindex_pdfs/
 
+# Chroma / vector DB artifacts
+chroma_db/
+*.sqlite3
+
+
 # IDE
 .vscode/
 .idea/

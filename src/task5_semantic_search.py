@@ -115,16 +115,22 @@ def semantic_search(query: str, top_k: int = 10) -> list[dict]:
         return []
 
     hypothetical_doc = _generate_hypothetical_doc(query)
-    embedding_vector = _embed_text(hypothetical_doc)
+    try:
+        embedding_vector = _embed_text(hypothetical_doc)
+    except Exception:
+        return []
     if not embedding_vector:
         return []
 
-    collection = _get_chroma_collection()
-    results = collection.query(
-        query_embeddings=[embedding_vector],
-        n_results=top_k,
-        include=["documents", "metadatas", "distances"],
-    )
+    try:
+        collection = _get_chroma_collection()
+        results = collection.query(
+            query_embeddings=[embedding_vector],
+            n_results=top_k,
+            include=["documents", "metadatas", "distances"],
+        )
+    except Exception:
+        return []
 
     documents = results.get("documents", [[]])[0]
     metadatas = results.get("metadatas", [[]])[0]
