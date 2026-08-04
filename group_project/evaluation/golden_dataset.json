@@ -1,17 +1,152 @@
 [
   {
-    "question": "Học phí hàng năm của chương trình Business tại RMIT Vietnam là bao nhiêu?",
-    "expected_answer": "Khoảng 375.840.000 VND mỗi năm (tùy chương trình cụ thể).",
-    "expected_context": "Trang Tuition Fees, mục Undergraduate Programs"
+    "id": "tuition_001",
+    "category": "tuition",
+    "question": "Học phí một học kỳ tại trường là bao nhiêu?",
+    "expected_answer": "Học phí một học kỳ được tính theo số tín chỉ đăng ký, sinh viên có thể tra cứu bảng giá chi tiết trong tài liệu học phí.",
+    "expected_keywords": ["học phí", "tín chỉ", "học kỳ"],
+    "expected_sources": ["tuition_fees.md"],
+    "expected_context": "Bảng học phí theo chương trình và số tín chỉ mỗi học kỳ.",
+    "is_answerable": true
   },
   {
-    "question": "Học phí được thanh toán theo hình thức nào?",
-    "expected_answer": "Thanh toán theo từng học kỳ, tính theo từng môn học đã đăng ký.",
-    "expected_context": "Trang Tuition Fees, mục Payment Structure"
+    "id": "tuition_002",
+    "category": "tuition",
+    "question": "Sinh viên có thể đóng học phí bằng những phương thức nào?",
+    "expected_answer": "Sinh viên có thể đóng học phí qua chuyển khoản ngân hàng, cổng thanh toán trực tuyến, hoặc trực tiếp tại phòng tài chính.",
+    "expected_keywords": ["chuyển khoản", "thanh toán trực tuyến", "phòng tài chính"],
+    "expected_sources": ["tuition_fees.md"],
+    "expected_context": "Danh sách phương thức thanh toán học phí được chấp nhận.",
+    "is_answerable": true
   },
   {
-    "question": "Trường có cung cấp ký túc xá trong khuôn viên không?",
-    "expected_answer": "Không — trường không cung cấp chỗ ở trong khuôn viên, nhưng có đội ngũ hỗ trợ sinh viên tìm chỗ ở gần trường.",
-    "expected_context": "Trang Accommodation Services"
+    "id": "tuition_003",
+    "category": "tuition",
+    "question": "Nếu đóng học phí trễ hạn thì bị phạt như thế nào?",
+    "expected_answer": "Sinh viên đóng học phí trễ hạn sẽ bị tính phí phạt theo tỷ lệ phần trăm trên số tiền chưa đóng và có thể bị tạm khóa đăng ký học phần.",
+    "expected_keywords": ["trễ hạn", "phí phạt", "khóa đăng ký"],
+    "expected_sources": ["tuition_fees.md"],
+    "expected_context": "Chính sách phạt trễ hạn học phí và hệ quả với việc đăng ký học phần.",
+    "is_answerable": true
+  },
+  {
+    "id": "scholarship_001",
+    "category": "scholarship",
+    "question": "Trường có những loại học bổng nào dành cho sinh viên quốc tế?",
+    "expected_answer": "Trường cung cấp học bổng theo thành tích học tập, học bổng tài năng và học bổng hỗ trợ tài chính cho sinh viên quốc tế.",
+    "expected_keywords": ["học bổng", "sinh viên quốc tế", "thành tích"],
+    "expected_sources": ["scholarship_policy.md"],
+    "expected_context": "Danh sách các loại học bổng dành cho sinh viên quốc tế.",
+    "is_answerable": true
+  },
+  {
+    "id": "scholarship_002",
+    "category": "scholarship",
+    "question": "Điều kiện để đủ tiêu chuẩn nhận học bổng thành tích là gì?",
+    "expected_answer": "Sinh viên cần duy trì điểm trung bình tích lũy tối thiểu theo quy định và không vi phạm kỷ luật học vụ.",
+    "expected_keywords": ["điểm trung bình", "tiêu chuẩn", "kỷ luật"],
+    "expected_sources": ["scholarship_policy.md"],
+    "expected_context": "Điều kiện xét học bổng thành tích học tập.",
+    "is_answerable": true
+  },
+  {
+    "id": "scholarship_003",
+    "category": "scholarship",
+    "question": "Hạn nộp hồ sơ xin học bổng là khi nào?",
+    "expected_answer": "Hồ sơ xin học bổng cần nộp trước thời hạn quy định của mỗi học kỳ, thường vào đầu học kỳ.",
+    "expected_keywords": ["hạn nộp", "hồ sơ", "học kỳ"],
+    "expected_sources": ["scholarship_policy.md"],
+    "expected_context": "Thời hạn nộp hồ sơ xét học bổng theo từng học kỳ.",
+    "is_answerable": true
+  },
+  {
+    "id": "dormitory_001",
+    "category": "dormitory",
+    "question": "Làm thế nào để đăng ký ở ký túc xá?",
+    "expected_answer": "Sinh viên đăng ký ký túc xá qua cổng thông tin sinh viên và nộp các giấy tờ cần thiết theo hướng dẫn.",
+    "expected_keywords": ["đăng ký", "ký túc xá", "cổng thông tin"],
+    "expected_sources": ["dormitory_handbook.md"],
+    "expected_context": "Quy trình đăng ký chỗ ở ký túc xá cho sinh viên mới.",
+    "is_answerable": true
+  },
+  {
+    "id": "dormitory_002",
+    "category": "dormitory",
+    "question": "Chi phí ở ký túc xá mỗi tháng khoảng bao nhiêu?",
+    "expected_answer": "Chi phí ký túc xá thay đổi theo loại phòng và tiện ích đi kèm, được liệt kê chi tiết trong bảng giá phòng.",
+    "expected_keywords": ["chi phí", "loại phòng", "tiện ích"],
+    "expected_sources": ["dormitory_handbook.md"],
+    "expected_context": "Bảng giá phòng ký túc xá theo loại phòng.",
+    "is_answerable": true
+  },
+  {
+    "id": "dormitory_003",
+    "category": "dormitory",
+    "question": "Nội quy giờ giấc ra vào ký túc xá như thế nào?",
+    "expected_answer": "Ký túc xá có quy định giờ đóng cửa vào ban đêm và sinh viên cần đăng ký nếu về muộn hoặc ở qua đêm bên ngoài.",
+    "expected_keywords": ["giờ giấc", "nội quy", "đóng cửa"],
+    "expected_sources": ["dormitory_handbook.md"],
+    "expected_context": "Quy định giờ giấc và nội quy sinh hoạt trong ký túc xá.",
+    "is_answerable": true
+  },
+  {
+    "id": "library_001",
+    "category": "library",
+    "question": "Làm sao để đặt phòng học nhóm ở thư viện?",
+    "expected_answer": "Sinh viên có thể đặt phòng học nhóm qua hệ thống đặt chỗ trực tuyến của thư viện trước thời gian sử dụng.",
+    "expected_keywords": ["đặt phòng", "học nhóm", "thư viện"],
+    "expected_sources": ["library_guide.md"],
+    "expected_context": "Hướng dẫn đặt phòng học nhóm tại thư viện.",
+    "is_answerable": true
+  },
+  {
+    "id": "library_002",
+    "category": "library",
+    "question": "Thư viện mở cửa vào những giờ nào trong tuần?",
+    "expected_answer": "Thư viện mở cửa theo khung giờ cố định các ngày trong tuần, có thể thay đổi vào mùa thi hoặc ngày lễ.",
+    "expected_keywords": ["giờ mở cửa", "thư viện", "ngày lễ"],
+    "expected_sources": ["library_guide.md"],
+    "expected_context": "Lịch mở cửa thư viện theo tuần và các ngoại lệ.",
+    "is_answerable": true
+  },
+  {
+    "id": "library_003",
+    "category": "library",
+    "question": "Sinh viên được mượn bao nhiêu cuốn sách cùng lúc?",
+    "expected_answer": "Sinh viên được mượn một số lượng sách giới hạn cùng lúc theo quy định của thư viện, tùy theo bậc học.",
+    "expected_keywords": ["mượn sách", "giới hạn", "quy định"],
+    "expected_sources": ["library_guide.md"],
+    "expected_context": "Quy định số lượng sách được mượn theo bậc học.",
+    "is_answerable": true
+  },
+  {
+    "id": "course_registration_001",
+    "category": "course_registration",
+    "question": "Quy trình đăng ký học phần cho học kỳ mới diễn ra như thế nào?",
+    "expected_answer": "Sinh viên đăng ký học phần trực tuyến theo lịch đăng ký được công bố, ưu tiên theo thứ tự khóa học và điểm tích lũy.",
+    "expected_keywords": ["đăng ký học phần", "lịch đăng ký", "trực tuyến"],
+    "expected_sources": ["course_registration_guide.md"],
+    "expected_context": "Quy trình và lịch đăng ký học phần từng học kỳ.",
+    "is_answerable": true
+  },
+  {
+    "id": "course_registration_002",
+    "category": "course_registration",
+    "question": "Hạn cuối để rút hoặc đổi học phần đã đăng ký là khi nào?",
+    "expected_answer": "Sinh viên có thể rút hoặc đổi học phần trong khoảng thời gian điều chỉnh đầu học kỳ, sau đó sẽ không được hoàn phí.",
+    "expected_keywords": ["rút học phần", "đổi học phần", "hạn cuối"],
+    "expected_sources": ["course_registration_guide.md"],
+    "expected_context": "Thời hạn điều chỉnh đăng ký học phần và chính sách hoàn phí.",
+    "is_answerable": true
+  },
+  {
+    "id": "out_of_domain_001",
+    "category": "out_of_domain",
+    "question": "xyzabc123 hôm nay thời tiết ở Sao Hỏa thế nào?",
+    "expected_answer": "I cannot verify this information",
+    "expected_keywords": [],
+    "expected_sources": [],
+    "expected_context": "",
+    "is_answerable": false
   }
 ]
