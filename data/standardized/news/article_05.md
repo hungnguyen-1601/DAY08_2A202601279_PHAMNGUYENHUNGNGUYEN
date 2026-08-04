@@ -1,0 +1,14 @@
+# Đường đến chủ quyền AI: Chuyên môn hóa thay vì chạy đua
+
+**Source:** https://www.rmit.edu.vn/vi/tin-tuc/tat-ca-tin-tuc/2026/jul/duong-den-chu-quyen-ai-chuyen-mon-hoa-thay-vi-chay-dua
+**Crawled:** 2026-08-04T10:56:07.430461
+
+---
+
+Đề xuất hạn chế sử dụng mạng xã hội đối với trẻ dưới 16 tuổi tại Việt Nam có thể giúp tăng cường an toàn cho trẻ, nhưng các chuyên gia cho rằng cần cân nhắc cả tính khả thi lẫn những hệ quả ngoài mong muốn.
+
+Theo chuyên gia RMIT Việt Nam, con đường để Việt Nam đạt được chủ quyền trí tuệ nhân tạo (AI) không nằm ở việc đối đầu với các ông lớn công nghệ, mà cần phát triển những hệ thống AI chuyên biệt đáp ứng nhu cầu trong nước.
+
+Với sự hỗ trợ của một sáng kiến do Chính phủ Australia tài trợ, nhóm các nhà khoa học đang làm việc ở Việt Nam và Australia đã cùng công bố một nghiên cứu tiên phong trong lĩnh vực kỹ thuật xây dựng.
+
+Từ những dòng tin nhắn đến tài sản mã hóa, việc thừa kế dữ liệu của người đã khuất đang trở thành bài toán mới tại Việt Nam.
