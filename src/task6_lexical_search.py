@@ -1,128 +1,83 @@
 """
-Task 6 — Lexical Search (BM25 & TF-IDF)
+Task 6 — Lexical Search Module (BM25).
 
-Hướng dẫn:
-    1. Tokenize văn bản tiếng Việt đơn giản
-    2. Tạo BM25 index bằng BM25Okapi
-    3. Tạo TF-IDF index bằng TfidfVectorizer
-    4. Chạy pytest tests/test_individual.py cho Task 4-6
+Mặc định sử dụng BM25. Nếu dùng phương pháp khác (TF-IDF, Elasticsearch,
+Weaviate BM25 built-in), hãy giải thích cơ chế trong buổi demo → +5 bonus.
 
 Cài đặt:
-    pip install rank-bm25 scikit-learn
+    pip install rank-bm25
 
-Bonus: hỗ trợ cả TF-IDF ngoài BM25 mặc định — chọn qua tham số `method`.
+BM25 hoạt động thế nào:
+    - Term Frequency (TF): từ xuất hiện nhiều trong document → điểm cao
+    - Inverse Document Frequency (IDF): từ hiếm → quan trọng hơn
+    - Document length normalization: document dài không bị ưu tiên quá mức
+    - Formula: score(q,d) = Σ IDF(qi) * (tf(qi,d) * (k1+1)) / (tf(qi,d) + k1*(1-b+b*|d|/avgdl))
+    - k1=1.5 (term saturation), b=0.75 (length normalization)
 """
 
-import re
 from pathlib import Path
 
-from rank_bm25 import BM25Okapi
-from sklearn.feature_extraction.text import TfidfVectorizer
-from sklearn.metrics.pairwise import cosine_similarity
-
-DATA_DIR = Path(__file__).parent.parent / "data" / "standardized"
+# TODO: Load corpus từ data/standardized/ hoặc từ vector store
+CORPUS: list[dict] = []  # List of {'content': str, 'metadata': dict}
 
 
-def simple_vietnamese_tokenize(text: str) -> list[str]:
+def build_bm25_index(corpus: list[dict]):
     """
-    Tokenize tiếng Việt đơn giản: lowercase + tách theo khoảng trắng/dấu câu.
-    Không dùng thư viện NLP phức tạp (underthesea/pyvi) — đủ dùng cho BM25/TF-IDF cơ bản.
-    """
-    text = text.lower()
-    text = re.sub(r"[^\w\sÀ-ỹ]", " ", text)  # giữ chữ cái có dấu tiếng Việt
-    tokens = text.split()
-    return tokens
-
-
-def load_documents() -> list[dict]:
-    """
-    Đọc toàn bộ file .md trong data/standardized/ (legal + news).
-    Returns:
-        [{"doc_id": str, "content": str}, ...]
-    """
-    docs = []
-    for md_file in DATA_DIR.rglob("*.md"):
-        content = md_file.read_text(encoding="utf-8")
-        docs.append({
-            "doc_id": md_file.stem,
-            "content": content,
-        })
-    return docs
-
-
-def build_bm25_index(docs: list[dict]):
-    """Tạo BM25 index từ danh sách document đã tokenize."""
-    tokenized_corpus = [simple_vietnamese_tokenize(d["content"]) for d in docs]
-    bm25 = BM25Okapi(tokenized_corpus)
-    return bm25
-
-
-def build_tfidf_index(docs: list[dict]):
-    """Tạo TF-IDF index từ danh sách document."""
-    corpus = [d["content"] for d in docs]
-    vectorizer = TfidfVectorizer(
-        tokenizer=simple_vietnamese_tokenize,
-        lowercase=False,
-        token_pattern=None,  # tắt warning vì đã dùng tokenizer tùy chỉnh
-    )
-    tfidf_matrix = vectorizer.fit_transform(corpus)
-    return vectorizer, tfidf_matrix
-
-
-def lexical_search(query: str, top_k: int = 10, method: str = "bm25") -> list[dict]:
-    """
-    Tìm kiếm lexical trên toàn bộ document đã convert.
-    Mặc định dùng BM25; truyền method="tfidf" để dùng TF-IDF (bonus).
+    Xây dựng BM25 index từ corpus.
 
     Args:
-        query: câu truy vấn
-        top_k: số kết quả trả về (mặc định 10)
-        method: "bm25" (mặc định) hoặc "tfidf"
+        corpus: List of {'content': str, 'metadata': dict}
+    """
+    # TODO: Implement BM25 index
+    #
+    # from rank_bm25 import BM25Okapi
+    #
+    # # Tokenize - có thể đơn giản split(), hoặc dùng underthesea cho tiếng Việt
+    # tokenized_corpus = [doc["content"].lower().split() for doc in corpus]
+    # bm25 = BM25Okapi(tokenized_corpus)
+    # return bm25
+    raise NotImplementedError("Implement build_bm25_index")
+
+
+def lexical_search(query: str, top_k: int = 10) -> list[dict]:
+    """
+    Tìm kiếm từ khóa sử dụng BM25.
+
+    Args:
+        query: Câu truy vấn
+        top_k: Số lượng kết quả tối đa
 
     Returns:
-        List of {'content': str, 'score': float, 'metadata': dict}
-        sắp xếp giảm dần theo score
-    """
-    docs = load_documents()
-    if not docs:
-        return []
-
-    query_tokens = simple_vietnamese_tokenize(query)
-
-    if method == "bm25":
-        bm25 = build_bm25_index(docs)
-        scores = bm25.get_scores(query_tokens)
-    elif method == "tfidf":
-        vectorizer, tfidf_matrix = build_tfidf_index(docs)
-        query_vec = vectorizer.transform([query])
-        scores = cosine_similarity(query_vec, tfidf_matrix).flatten()
-    else:
-        raise ValueError(f"Method không hợp lệ: {method}. Chọn 'bm25' hoặc 'tfidf'.")
-
-    results = [
-        {
-            "content": docs[i]["content"],
-            "score": float(scores[i]),
-            "metadata": {"doc_id": docs[i]["doc_id"]},
+        List of {
+            'content': str,
+            'score': float,      # BM25 score
+            'metadata': dict
         }
-        for i in range(len(docs))
-    ]
-    results.sort(key=lambda x: x["score"], reverse=True)
-    return results[:top_k]
+        Sorted by score descending.
+    """
+    # TODO: Implement lexical search
+    #
+    # tokenized_query = query.lower().split()
+    # scores = bm25.get_scores(tokenized_query)
+    #
+    # # Get top_k indices
+    # import numpy as np
+    # top_indices = np.argsort(scores)[::-1][:top_k]
+    #
+    # results = []
+    # for idx in top_indices:
+    #     if scores[idx] > 0:
+    #         results.append({
+    #             "content": CORPUS[idx]["content"],
+    #             "score": float(scores[idx]),
+    #             "metadata": CORPUS[idx]["metadata"]
+    #         })
+    # return results
+    raise NotImplementedError("Implement lexical_search")
 
 
 if __name__ == "__main__":
-    print("=" * 50)
-    print("Task 6: Lexical Search (BM25 & TF-IDF)")
-    print("=" * 50)
-
-    test_query = "học phí"
-    print(f"\nQuery: '{test_query}'")
-
-    print("\n--- BM25 (mac dinh) ---")
-    for r in lexical_search(test_query, top_k=3):
-        print(f"  [{r['score']:.4f}] {r['metadata']['doc_id']}")
-
-    print("\n--- TF-IDF (bonus) ---")
-    for r in lexical_search(test_query, top_k=3, method="tfidf"):
-        print(f"  [{r['score']:.4f}] {r['metadata']['doc_id']}")
+    # Test
+    results = lexical_search("tuition fee payment methods", top_k=5)
+    for r in results:
+        print(f"[{r['score']:.3f}] {r['content'][:100]}...")
