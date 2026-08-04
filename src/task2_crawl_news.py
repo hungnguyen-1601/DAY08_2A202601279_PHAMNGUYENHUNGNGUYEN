@@ -18,8 +18,13 @@ Gợi ý chủ đề: thông báo tuyển sinh, sự kiện, dịch vụ thư vi
 
 import asyncio
 import json
+import re
 from datetime import datetime
 from pathlib import Path
+from typing import Optional
+
+import requests
+from bs4 import BeautifulSoup
 
 DATA_DIR = Path(__file__).parent.parent / "data" / "landing" / "news"
 
@@ -29,12 +34,67 @@ def setup_directory():
     DATA_DIR.mkdir(parents=True, exist_ok=True)
 
 
-# TODO: Điền danh sách URL bài viết cần crawl
 ARTICLE_URLS = [
-    # Ví dụ (trang công khai RMIT Vietnam):
-    # "https://www.rmit.edu.vn/libraryvn/...",
-    # "https://www.rmit.edu.vn/students/...",
+    "https://www.rmit.edu.vn/vi/tin-tuc/tat-ca-tin-tuc/2026/jul/hien-thuc-hoa-tam-nhin-100-nam-cua-ha-noi",
+    "https://www.rmit.edu.vn/vi/tin-tuc/tat-ca-tin-tuc/2026/jul/hoi-nghi-quoc-te-ban-ve-tuong-lai-cua-chuoi-cung-ung-tai-tao",
+    "https://www.rmit.edu.vn/vi/tin-tuc/tat-ca-tin-tuc/2026/jul/bo-giao-duc-va-dao-tao-phoi-hop-voi-dai-hoc-rmit-nang-cao-chat-luong-thiet-ke-hoc-truc-tuyen",
+    "https://www.rmit.edu.vn/vi/tin-tuc/tat-ca-tin-tuc/2026/jul/de-xuat-bao-ve-tre-em-tren-mang-xa-hoi-khong-chi-la-cau-chuyen-an-toan",
+    "https://www.rmit.edu.vn/vi/tin-tuc/tat-ca-tin-tuc/2026/jul/duong-den-chu-quyen-ai-chuyen-mon-hoa-thay-vi-chay-dua",
 ]
+
+
+def _clean_text(text: str) -> str:
+    text = re.sub(r"\s+", " ", text)
+    return text.strip()
+
+
+def _extract_title(soup: BeautifulSoup) -> str:
+    title_tag = soup.find("h1")
+    if title_tag and title_tag.get_text(strip=True):
+        return _clean_text(title_tag.get_text(separator=" ", strip=True))
+
+    if soup.title and soup.title.string:
+        return _clean_text(soup.title.string)
+
+    return "Untitled Article"
+
+
+def _extract_article_content(soup: BeautifulSoup) -> str:
+    article = soup.find("article")
+    if article:
+        paragraphs = [
+            _clean_text(p.get_text(separator=" ", strip=True))
+            for p in article.find_all(["p", "li"])
+            if _clean_text(p.get_text(separator=" ", strip=True))
+        ]
+        if paragraphs:
+            return "\n\n".join(paragraphs)
+
+    selectors = [
+        "div[class*='content']",
+        "div[class*='article']",
+        "main",
+        "section[class*='content']",
+    ]
+
+    for selector in selectors:
+        region = soup.select_one(selector)
+        if region:
+            paragraphs = [
+                _clean_text(p.get_text(separator=" ", strip=True))
+                for p in region.find_all(["p", "li"])
+                if _clean_text(p.get_text(separator=" ", strip=True))
+            ]
+            if paragraphs:
+                return "\n\n".join(paragraphs)
+
+    paragraphs = [
+        _clean_text(p.get_text(separator=" ", strip=True))
+        for p in soup.find_all("p")
+        if _clean_text(p.get_text(separator=" ", strip=True))
+    ]
+
+    return "\n\n".join(paragraphs)
 
 
 async def crawl_article(url: str) -> dict:
@@ -49,18 +109,27 @@ async def crawl_article(url: str) -> dict:
             "content_markdown": str
         }
     """
-    from crawl4ai import AsyncWebCrawler
+    headers = {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 "
+        "(KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36"
+    }
 
-    # TODO: Implement crawling logic
-    # async with AsyncWebCrawler() as crawler:
-    #     result = await crawler.arun(url=url)
-    #     return {
-    #         "url": url,
-    #         "title": result.metadata.get("title", "Unknown"),
-    #         "date_crawled": datetime.now().isoformat(),
-    #         "content_markdown": result.markdown,
-    #     }
-    raise NotImplementedError("Implement crawl_article")
+    response = requests.get(url, headers=headers, timeout=20)
+    response.raise_for_status()
+
+    soup = BeautifulSoup(response.text, "html.parser")
+    title = _extract_title(soup)
+    content = _extract_article_content(soup)
+
+    if not content:
+        raise RuntimeError(f"Không thể trích xuất nội dung từ {url}")
+
+    return {
+        "url": url,
+        "title": title,
+        "date_crawled": datetime.now().isoformat(),
+        "content_markdown": content,
+    }
 
 
 async def crawl_all():
@@ -71,10 +140,9 @@ async def crawl_all():
         print(f"[{i}/{len(ARTICLE_URLS)}] Crawling: {url}")
         article = await crawl_article(url)
 
-        # Lưu file JSON
         filename = f"article_{i:02d}.json"
         filepath = DATA_DIR / filename
-        filepath.write_text(json.dumps(article, ensure_ascii=False, indent=2))
+        filepath.write_text(json.dumps(article, ensure_ascii=False, indent=2), encoding="utf-8")
         print(f"  ✓ Saved: {filepath}")
 
 
