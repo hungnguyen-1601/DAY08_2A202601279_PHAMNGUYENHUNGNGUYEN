@@ -9,6 +9,8 @@ Hướng dẫn:
 
 Cài đặt:
     pip install rank-bm25 scikit-learn
+
+Bonus: hỗ trợ cả TF-IDF ngoài BM25 mặc định — chọn qua tham số `method`.
 """
 
 import re
@@ -58,22 +60,28 @@ def build_bm25_index(docs: list[dict]):
 def build_tfidf_index(docs: list[dict]):
     """Tạo TF-IDF index từ danh sách document."""
     corpus = [d["content"] for d in docs]
-    vectorizer = TfidfVectorizer(tokenizer=simple_vietnamese_tokenize, lowercase=False)
+    vectorizer = TfidfVectorizer(
+        tokenizer=simple_vietnamese_tokenize,
+        lowercase=False,
+        token_pattern=None,  # tắt warning vì đã dùng tokenizer tùy chỉnh
+    )
     tfidf_matrix = vectorizer.fit_transform(corpus)
     return vectorizer, tfidf_matrix
 
 
-def lexical_search(query: str, method: str = "bm25", top_k: int = 5) -> list[dict]:
+def lexical_search(query: str, top_k: int = 10, method: str = "bm25") -> list[dict]:
     """
-    Tìm kiếm lexical (BM25 hoặc TF-IDF) trên toàn bộ document đã convert.
+    Tìm kiếm lexical trên toàn bộ document đã convert.
+    Mặc định dùng BM25; truyền method="tfidf" để dùng TF-IDF (bonus).
 
     Args:
         query: câu truy vấn
-        method: "bm25" hoặc "tfidf"
-        top_k: số kết quả trả về
+        top_k: số kết quả trả về (mặc định 10)
+        method: "bm25" (mặc định) hoặc "tfidf"
 
     Returns:
-        [{"doc_id": str, "content": str, "score": float}, ...] — sắp xếp giảm dần theo score
+        List of {'content': str, 'score': float, 'metadata': dict}
+        sắp xếp giảm dần theo score
     """
     docs = load_documents()
     if not docs:
@@ -92,7 +100,11 @@ def lexical_search(query: str, method: str = "bm25", top_k: int = 5) -> list[dic
         raise ValueError(f"Method không hợp lệ: {method}. Chọn 'bm25' hoặc 'tfidf'.")
 
     results = [
-        {"doc_id": docs[i]["doc_id"], "content": docs[i]["content"], "score": float(scores[i])}
+        {
+            "content": docs[i]["content"],
+            "score": float(scores[i]),
+            "metadata": {"doc_id": docs[i]["doc_id"]},
+        }
         for i in range(len(docs))
     ]
     results.sort(key=lambda x: x["score"], reverse=True)
@@ -107,10 +119,10 @@ if __name__ == "__main__":
     test_query = "học phí"
     print(f"\nQuery: '{test_query}'")
 
-    print("\n--- BM25 ---")
-    for r in lexical_search(test_query, method="bm25", top_k=3):
-        print(f"  [{r['score']:.4f}] {r['doc_id']}")
+    print("\n--- BM25 (mac dinh) ---")
+    for r in lexical_search(test_query, top_k=3):
+        print(f"  [{r['score']:.4f}] {r['metadata']['doc_id']}")
 
-    print("\n--- TF-IDF ---")
-    for r in lexical_search(test_query, method="tfidf", top_k=3):
-        print(f"  [{r['score']:.4f}] {r['doc_id']}")
+    print("\n--- TF-IDF (bonus) ---")
+    for r in lexical_search(test_query, top_k=3, method="tfidf"):
+        print(f"  [{r['score']:.4f}] {r['metadata']['doc_id']}")
