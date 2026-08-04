@@ -1,0 +1,1139 @@
+{
+  "offline": {
+    "retrieval": {
+      "summary": {
+        "hit_at_k": 0.0,
+        "mrr": 0.0,
+        "keyword_context_recall": 0.5714285714285714,
+        "mean_latency_ms": 7202.612880000379,
+        "source_diversity": 0.4,
+        "error_count": 0
+      },
+      "cases": [
+        {
+          "id": "tuition_001",
+          "category": "tuition",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 1.0,
+          "latency_ms": 20204.350799998792,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "tuition_002",
+          "category": "tuition",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 1.0,
+          "latency_ms": 6083.281799998076,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "tuition_003",
+          "category": "tuition",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 0.6666666666666666,
+          "latency_ms": 6007.276899996214,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "scholarship_001",
+          "category": "scholarship",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 0.6666666666666666,
+          "latency_ms": 6078.40330000181,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "scholarship_002",
+          "category": "scholarship",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 1.0,
+          "latency_ms": 6758.092200005194,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "scholarship_003",
+          "category": "scholarship",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 0.6666666666666666,
+          "latency_ms": 6761.200200002349,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "dormitory_001",
+          "category": "dormitory",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 0.6666666666666666,
+          "latency_ms": 6003.386999997019,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "dormitory_002",
+          "category": "dormitory",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 0.3333333333333333,
+          "latency_ms": 6562.873400005628,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "dormitory_003",
+          "category": "dormitory",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 0.3333333333333333,
+          "latency_ms": 6514.855200002785,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "library_001",
+          "category": "library",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 0.3333333333333333,
+          "latency_ms": 5934.497400005057,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "library_002",
+          "category": "library",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 0.3333333333333333,
+          "latency_ms": 6657.275099998515,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "library_003",
+          "category": "library",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 0.6666666666666666,
+          "latency_ms": 6043.491299999005,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "course_registration_001",
+          "category": "course_registration",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 0.3333333333333333,
+          "latency_ms": 6095.136500000081,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "course_registration_002",
+          "category": "course_registration",
+          "hit_at_k": 0.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 0.0,
+          "latency_ms": 6085.996199995861,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        },
+        {
+          "id": "out_of_domain_001",
+          "category": "out_of_domain",
+          "hit_at_k": 1.0,
+          "reciprocal_rank": 0.0,
+          "keyword_context_recall": 1.0,
+          "latency_ms": 6249.075899999298,
+          "result_count": 5,
+          "source_diversity": 0.4,
+          "retrieved_sources": [
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md",
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "error": null
+        }
+      ]
+    },
+    "generation": {
+      "summary": {
+        "citation_presence": 0.0,
+        "citation_validity": 0.0,
+        "keyword_answer_recall": 0.09523809523809523,
+        "abstention_accuracy": 0,
+        "mean_latency_ms": 7968.342626665738,
+        "error_count": 0
+      },
+      "cases": [
+        {
+          "id": "tuition_001",
+          "category": "tuition",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.6666666666666666,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 8323.20880000043,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: (không chuyển tiếp). This tuition fee assistance can be combined with a scholarship. Chính sách học phí đặc biệt này có thể áp dụng đồng thời với chương trình học bổng. 17 June 2026 2026 Student Fees & Charges Guide Page 18 of 59 Ngày 17/06/2026 Tài liệu Hướng dẫn Thông tin học p [Source: student-fees-and-charges-guide-rmit-2026.md] và tuition fee assistance programs. Chính sách học phí đặc biệt cho cựu sinh viên Úc không được xét và áp dụng cho những học kỳ đã qua và không được áp dụng đồng thời với các chương t [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "tuition_002",
+          "category": "tuition",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.0,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 7422.75189999782,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: sinh viên. 4. Tuition Fees Học phí All tuition fees, including course fees applicable to English, University Pathway and Higher Education programs, are listed on the RMIT Vietnam Intranet. An indication of yearly and total program fees, based on current fees, is available on the  [Source: student-fees-and-charges-guide-rmit-2026.md] và với chính sách học phí đặc biệt khác, học bổng Dự bị Đại học hoặc chương trình chính sách học phí cho người phụ thuộc của nhân viên RMIT. This tuition fee assistance is only applic [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "tuition_003",
+          "category": "tuition",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.0,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 7036.174799999571,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: Studies Scholarship, or fee support for staff dependent scheme. Chương trình ưu đãi này không thể áp dụng đồng thời với chính sách học phí đặc biệt khác, học bổng Dự bị Đại học hoặc chương trình chính sách học phí cho người phụ thuộc của nhân viên RMIT. This tuition fee assistanc [Source: student-fees-and-charges-guide-rmit-2026.md] và chương trình giảm 10% học phí của RMIT Việt Nam nếu muốn tiếp tục học một ngành học khác thuộc chương trình Đại học – Sau đại học của trường. To qualify for the tuition fee assista [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "scholarship_001",
+          "category": "scholarship",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.3333333333333333,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 7207.371299999068,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: thuộc vào sự chấp thuận của RMIT Việt Nam. Nếu sinh viên tiềm năng không ghi danh trong thời hạn này, khoản tiền giữ chỗ/đặt cọc sẽ thuộc quyền sở hữu của RMIT Việt Nam và trong mọi trường hợp sẽ không được hoàn trả. 9. Payment of University Pathway and Higher Education Tuition F [Source: student-fees-and-charges-guide-rmit-2026.md] và Studies Scholarship, or fee support for staff dependent scheme. Chương trình ưu đãi này không thể áp dụng đồng thời với chính sách học phí đặc biệt khác, học bổng Dự bị Đại học hoặ [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "scholarship_002",
+          "category": "scholarship",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.0,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 7562.748900003498,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: (không chuyển tiếp). This tuition fee assistance can be combined with a scholarship. Chính sách học phí đặc biệt này có thể áp dụng đồng thời với chương trình học bổng. 17 June 2026 2026 Student Fees & Charges Guide Page 18 of 59 Ngày 17/06/2026 Tài liệu Hướng dẫn Thông tin học p [Source: student-fees-and-charges-guide-rmit-2026.md] và Studies Scholarship, or fee support for staff dependent scheme. Chương trình ưu đãi này không thể áp dụng đồng thời với chính sách học phí đặc biệt khác, học bổng Dự bị Đại học hoặ [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "scholarship_003",
+          "category": "scholarship",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.0,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 7104.449699996621,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: (không chuyển tiếp). This tuition fee assistance can be combined with a scholarship. Chính sách học phí đặc biệt này có thể áp dụng đồng thời với chương trình học bổng. 17 June 2026 2026 Student Fees & Charges Guide Page 18 of 59 Ngày 17/06/2026 Tài liệu Hướng dẫn Thông tin học p [Source: student-fees-and-charges-guide-rmit-2026.md] và Studies Scholarship, or fee support for staff dependent scheme. Chương trình ưu đãi này không thể áp dụng đồng thời với chính sách học phí đặc biệt khác, học bổng Dự bị Đại học hoặ [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "dormitory_001",
+          "category": "dormitory",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.3333333333333333,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 8527.951200005191,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: RMIT Classification: Trusted Để tham gia chính sách học phí đặc biệt này, cựu sinh viên phải nộp đơn đăng ký hợp lệ và các chứng từ bổ sung nếu được yêu cầu. Đơn đăng ký tham gia chương trình phải được nộp trước cuối ngày làm việc của Thứ Sáu trước khi tuần học đầu tiên của học k [Source: student-fees-and-charges-guide-rmit-2026.md] và compulsory National medical insurance (collected on behalf of the Social Insurance Unit of the city in which the campus is located). Hóa đơn tài chính điện tử chính thức được phát  [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "dormitory_002",
+          "category": "dormitory",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.0,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 11052.262799996242,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: Studies Scholarship, or fee support for staff dependent scheme. Chương trình ưu đãi này không thể áp dụng đồng thời với chính sách học phí đặc biệt khác, học bổng Dự bị Đại học hoặc chương trình chính sách học phí cho người phụ thuộc của nhân viên RMIT. This tuition fee assistanc [Source: student-fees-and-charges-guide-rmit-2026.md] và (không chuyển tiếp). This tuition fee assistance can be combined with a scholarship. Chính sách học phí đặc biệt này có thể áp dụng đồng thời với chương trình học bổng. 17 June 202 [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "dormitory_003",
+          "category": "dormitory",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.0,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 8035.246999999799,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: RMIT Classification: Trusted Để tham gia chính sách học phí đặc biệt này, cựu sinh viên phải nộp đơn đăng ký hợp lệ và các chứng từ bổ sung nếu được yêu cầu. Đơn đăng ký tham gia chương trình phải được nộp trước cuối ngày làm việc của Thứ Sáu trước khi tuần học đầu tiên của học k [Source: student-fees-and-charges-guide-rmit-2026.md] và compulsory National medical insurance (collected on behalf of the Social Insurance Unit of the city in which the campus is located). Hóa đơn tài chính điện tử chính thức được phát  [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "library_001",
+          "category": "library",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.0,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 7497.71480000345,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: Studies Scholarship, or fee support for staff dependent scheme. Chương trình ưu đãi này không thể áp dụng đồng thời với chính sách học phí đặc biệt khác, học bổng Dự bị Đại học hoặc chương trình chính sách học phí cho người phụ thuộc của nhân viên RMIT. This tuition fee assistanc [Source: student-fees-and-charges-guide-rmit-2026.md] và với chính sách học phí đặc biệt khác, học bổng Dự bị Đại học hoặc chương trình chính sách học phí cho người phụ thuộc của nhân viên RMIT. This tuition fee assistance is only applic [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "library_002",
+          "category": "library",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.0,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 8827.623499993933,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: thuộc vào sự chấp thuận của RMIT Việt Nam. Nếu sinh viên tiềm năng không ghi danh trong thời hạn này, khoản tiền giữ chỗ/đặt cọc sẽ thuộc quyền sở hữu của RMIT Việt Nam và trong mọi trường hợp sẽ không được hoàn trả. 9. Payment of University Pathway and Higher Education Tuition F [Source: student-fees-and-charges-guide-rmit-2026.md] và được nhận vào chương trình Cử nhân Khoa học Máy tính và bắt đầu nhập học trong niên học 2026 hoặc 2027. Additionally, this tuition fee assistance extends to students who enrolled i [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "library_003",
+          "category": "library",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.0,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 7905.817400001979,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: chỉnh từ 25% xuống 15%. The tuition fee assistance program applies to students who are new to RMIT Vietnam, or students who previously discontinued studies and have returned to English for University after at least six months, or students who completed IETLS or TEEN program and e [Source: student-fees-and-charges-guide-rmit-2026.md] và Studies Scholarship, or fee support for staff dependent scheme. Chương trình ưu đãi này không thể áp dụng đồng thời với chính sách học phí đặc biệt khác, học bổng Dự bị Đại học hoặ [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "course_registration_001",
+          "category": "course_registration",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.0,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 8223.571399998036,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: chương trình giảm 10% học phí của RMIT Việt Nam nếu muốn tiếp tục học một ngành học khác thuộc chương trình Đại học – Sau đại học của trường. To qualify for the tuition fee assistance, an alumnus must lodge a valid application; documentary evidence must be provided if requested.  [Source: student-fees-and-charges-guide-rmit-2026.md] và Studies Scholarship, or fee support for staff dependent scheme. Chương trình ưu đãi này không thể áp dụng đồng thời với chính sách học phí đặc biệt khác, học bổng Dự bị Đại học hoặ [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "course_registration_002",
+          "category": "course_registration",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 0.0,
+          "abstained": false,
+          "is_answerable": true,
+          "latency_ms": 7175.682099994447,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: Studies Scholarship, or fee support for staff dependent scheme. Chương trình ưu đãi này không thể áp dụng đồng thời với chính sách học phí đặc biệt khác, học bổng Dự bị Đại học hoặc chương trình chính sách học phí cho người phụ thuộc của nhân viên RMIT. This tuition fee assistanc [Source: student-fees-and-charges-guide-rmit-2026.md] và RMIT Classification: Trusted Để tham gia chính sách học phí đặc biệt này, cựu sinh viên phải nộp đơn đăng ký hợp lệ và các chứng từ bổ sung nếu được yêu cầu. Đơn đăng ký tham gia c [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        },
+        {
+          "id": "out_of_domain_001",
+          "category": "out_of_domain",
+          "citation_presence": 0.0,
+          "citation_validity": 0.0,
+          "keyword_answer_recall": 1.0,
+          "abstained": false,
+          "is_answerable": false,
+          "latency_ms": 7622.563799995987,
+          "answer": "Dựa trên các nguồn được cung cấp, thông tin liên quan là: compulsory National medical insurance (collected on behalf of the Social Insurance Unit of the city in which the campus is located). Hóa đơn tài chính điện tử chính thức được phát hành không bao gồm các khoản phí thu hộ cho bên thứ ba ví dụ Phí bảo hiểm y tế bắt buộc (thu hộ Văn  [Source: student-fees-and-charges-guide-rmit-2026.md] và được nhận vào chương trình Cử nhân Khoa học Máy tính và bắt đầu nhập học trong niên học 2026 hoặc 2027. Additionally, this tuition fee assistance extends to students who enrolled i [Source: student-fees-and-charges-guide-rmit-2026.md]",
+          "source_names": [
+            "",
+            "student-fees-and-charges-guide-rmit-2026.md"
+          ],
+          "citations": [],
+          "error": null
+        }
+      ]
+    },
+    "deepseek_judge": {
+      "status": "skipped",
+      "reason": "DEEPSEEK_API_KEY is not configured"
+    }
+  },
+  "comparison": {
+    "configs": {
+      "hybrid_rerank_fallback": {
+        "summary": {
+          "hit_at_k": 0.0,
+          "mrr": 0.0,
+          "keyword_context_recall": 0.5714285714285714,
+          "mean_latency_ms": 13629.104486667105,
+          "source_diversity": 0.4,
+          "error_count": 0
+        },
+        "cases": [
+          {
+            "id": "tuition_001",
+            "category": "tuition",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 1.0,
+            "latency_ms": 6331.6218000036315,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "tuition_002",
+            "category": "tuition",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 1.0,
+            "latency_ms": 6840.407000003324,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "tuition_003",
+            "category": "tuition",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.6666666666666666,
+            "latency_ms": 30194.329099998868,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "scholarship_001",
+            "category": "scholarship",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.6666666666666666,
+            "latency_ms": 36841.327699999965,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "scholarship_002",
+            "category": "scholarship",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 1.0,
+            "latency_ms": 7733.0392000003485,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "scholarship_003",
+            "category": "scholarship",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.6666666666666666,
+            "latency_ms": 6160.527599997295,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "dormitory_001",
+            "category": "dormitory",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.6666666666666666,
+            "latency_ms": 6392.715100002533,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "dormitory_002",
+            "category": "dormitory",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.3333333333333333,
+            "latency_ms": 6212.322799998219,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "dormitory_003",
+            "category": "dormitory",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.3333333333333333,
+            "latency_ms": 6536.84659999999,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "library_001",
+            "category": "library",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.3333333333333333,
+            "latency_ms": 6073.5897999984445,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "library_002",
+            "category": "library",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.3333333333333333,
+            "latency_ms": 6958.465000003343,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "library_003",
+            "category": "library",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.6666666666666666,
+            "latency_ms": 6545.402399999148,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "course_registration_001",
+            "category": "course_registration",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.3333333333333333,
+            "latency_ms": 6926.155699999072,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "course_registration_002",
+            "category": "course_registration",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.0,
+            "latency_ms": 13106.35590000311,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "out_of_domain_001",
+            "category": "out_of_domain",
+            "hit_at_k": 1.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 1.0,
+            "latency_ms": 51583.46159999928,
+            "result_count": 5,
+            "source_diversity": 0.4,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          }
+        ]
+      },
+      "dense_only": {
+        "summary": {
+          "hit_at_k": 0.0,
+          "mrr": 0.0,
+          "keyword_context_recall": 0.14285714285714285,
+          "mean_latency_ms": 8749.267499999647,
+          "source_diversity": 0.2,
+          "error_count": 0
+        },
+        "cases": [
+          {
+            "id": "tuition_001",
+            "category": "tuition",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.6666666666666666,
+            "latency_ms": 15086.218600001303,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "tuition_002",
+            "category": "tuition",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.0,
+            "latency_ms": 6715.896999994584,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "tuition_003",
+            "category": "tuition",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.0,
+            "latency_ms": 8505.64960000338,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "scholarship_001",
+            "category": "scholarship",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.3333333333333333,
+            "latency_ms": 7026.451700003236,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "scholarship_002",
+            "category": "scholarship",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.0,
+            "latency_ms": 6664.671099999396,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "scholarship_003",
+            "category": "scholarship",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.6666666666666666,
+            "latency_ms": 6773.124300001655,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "dormitory_001",
+            "category": "dormitory",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.3333333333333333,
+            "latency_ms": 7289.674699997704,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "dormitory_002",
+            "category": "dormitory",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.0,
+            "latency_ms": 6909.888299996965,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "dormitory_003",
+            "category": "dormitory",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.0,
+            "latency_ms": 15363.311499997508,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "library_001",
+            "category": "library",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.0,
+            "latency_ms": 18211.498000004212,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "library_002",
+            "category": "library",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.0,
+            "latency_ms": 6532.422099997348,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "library_003",
+            "category": "library",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.0,
+            "latency_ms": 6250.737099995604,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "course_registration_001",
+            "category": "course_registration",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.0,
+            "latency_ms": 6754.754300003697,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "course_registration_002",
+            "category": "course_registration",
+            "hit_at_k": 0.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 0.0,
+            "latency_ms": 7043.43130000052,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          },
+          {
+            "id": "out_of_domain_001",
+            "category": "out_of_domain",
+            "hit_at_k": 1.0,
+            "reciprocal_rank": 0.0,
+            "keyword_context_recall": 1.0,
+            "latency_ms": 6111.2828999976045,
+            "result_count": 5,
+            "source_diversity": 0.2,
+            "retrieved_sources": [
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md",
+              "student-fees-and-charges-guide-rmit-2026.md"
+            ],
+            "error": null
+          }
+        ]
+      }
+    },
+    "delta": {
+      "hit_at_k": 0.0,
+      "mrr": 0.0,
+      "keyword_context_recall": 0.42857142857142855,
+      "mean_latency_ms": 4879.836986667458,
+      "source_diversity": 0.2
+    },
+    "winner": {
+      "hit_at_k": "tie",
+      "mrr": "tie",
+      "keyword_context_recall": "hybrid_rerank_fallback",
+      "mean_latency_ms": "dense_only",
+      "source_diversity": "hybrid_rerank_fallback"
+    }
+  }
+}
