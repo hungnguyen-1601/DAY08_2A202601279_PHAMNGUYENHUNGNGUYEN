@@ -41,8 +41,8 @@ TOP_P = 0.9
 # Chọn 0.3 vì: RAG cần factual, ít sáng tạo
 TEMPERATURE = 0.3
 
-# TODO: Chọn LLM model (OpenRouter model ID)
-LLM_MODEL = "openai/gpt-4o-mini"  # hoặc model ":free" nếu chưa có credit
+# Chọn model mặc định cho generation
+LLM_MODEL = "gpt-4o-mini"
 
 
 # =============================================================================
@@ -197,21 +197,29 @@ def _call_llm(prompt: str) -> str:
     if not api_key:
         raise RuntimeError("No API key configured")
 
-    try:
-        from openai import OpenAI
+    last_error = None
+    for _ in range(2):
+        try:
+            from openai import OpenAI
 
-        client = OpenAI(api_key=api_key, base_url="https://openrouter.ai/api/v1")
-        response = client.chat.completions.create(
-            model=LLM_MODEL,
-            messages=[
-                {"role": "system", "content": SYSTEM_PROMPT},
-                {"role": "user", "content": prompt},
-            ],
-            temperature=TEMPERATURE,
-            top_p=TOP_P,
-        )
-        return response.choices[0].message.content.strip()
-    except Exception:
+            client = OpenAI(api_key=api_key, base_url="https://openrouter.ai/api/v1")
+            response = client.chat.completions.create(
+                model=LLM_MODEL,
+                messages=[
+                    {"role": "system", "content": SYSTEM_PROMPT},
+                    {"role": "user", "content": prompt},
+                ],
+                temperature=TEMPERATURE,
+                top_p=TOP_P,
+            )
+            return response.choices[0].message.content.strip()
+        except Exception as exc:
+            last_error = exc
+            message = str(exc).lower()
+            if "429" in message or "rate limit" in message or "too many requests" in message:
+                continue
+            break
+
         try:
             import openai
 
@@ -228,7 +236,13 @@ def _call_llm(prompt: str) -> str:
             )
             return response.choices[0].message.content.strip()
         except Exception as exc:
-            raise RuntimeError("LLM call failed") from exc
+            last_error = exc
+            message = str(exc).lower()
+            if "429" in message or "rate limit" in message or "too many requests" in message:
+                continue
+            break
+
+    raise RuntimeError(f"LLM call failed: {last_error}") from last_error
 
 
 def _build_fallback_answer(query: str, chunks: list[dict]) -> str:
