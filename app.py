@@ -111,15 +111,8 @@ if query:
     with st.chat_message("assistant"):
         with st.spinner("Đang tìm kiếm tài liệu và tổng hợp câu trả lời..."):
             try:
-                # TODO (Học viên): Tích hợp hàm sinh câu trả lời từ Task 10
-                # Ví dụ:
-                # from src.task10_generation import generate_with_citation
-                # response = generate_with_citation(query, top_k=top_k)
-                # answer = response["answer"]
-                # sources = response.get("sources", [])
-
-                # Tạm thời mockup để test UI:
                 from src.task10_generation import generate_with_citation
+
                 response = generate_with_citation(query, top_k=top_k)
                 answer = response.get("answer", "Chưa thể trả lời.")
                 sources = response.get("sources", [])
@@ -137,7 +130,7 @@ if query:
                 with st.expander(f"📚 Nguồn tham khảo ({len(sources)} chunks)"):
                     for i, src in enumerate(sources, 1):
                         meta = src.get("metadata", {})
-                        source_name = meta.get("source", "Unknown")
+                        source_name = meta.get("source") or meta.get("doc_id") or meta.get("source_file") or "Unknown"
                         doc_type = meta.get("type", "unknown")
                         score = src.get("score", 0)
                         st.markdown(f"**[{i}] {source_name}** `{doc_type}` | score: `{score:.4f}`")
